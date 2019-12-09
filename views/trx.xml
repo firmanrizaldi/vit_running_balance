@@ -7,7 +7,7 @@
         <field name="name">model.name.view.tree</field>
         <field name="model">vit.trx</field>
         <field name="arch" type="xml">
-            <tree string="trx">
+            <tree string="trx" create="false" edit="false" >
                 <field name="date"/>
                 <field name="name"/>
                 <field name="debit"/>
@@ -23,7 +23,7 @@
         <field name="name">model.name.view.form</field>
         <field name="model">vit.trx</field>
         <field name="arch" type="xml">
-            <form string="trx">
+            <form string="trx" create="false" edit="false">
                 <sheet>
                     <group>
                         <field name="date"/>
