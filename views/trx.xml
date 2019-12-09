@@ -1,0 +1,61 @@
+<odoo>
+    <data>
+
+        
+    <!-- model.name tree view -->
+    <record id="model_name_view_tree" model="ir.ui.view">
+        <field name="name">model.name.view.tree</field>
+        <field name="model">vit.trx</field>
+        <field name="arch" type="xml">
+            <tree string="trx">
+                <field name="date"/>
+                <field name="name"/>
+                <field name="debit"/>
+                <field name="credit"/>
+                <field name="balance"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <!-- model.name form view -->
+    <record id="model_name_view_form" model="ir.ui.view">
+        <field name="name">model.name.view.form</field>
+        <field name="model">vit.trx</field>
+        <field name="arch" type="xml">
+            <form string="trx">
+                <sheet>
+                    <group>
+                        <field name="date"/>
+                        <field name="name"/>
+                        <field name="debit"/>
+                        <field name="credit"/>  
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    
+
+    
+    <record id="act_open_vit_trx_view" model="ir.actions.act_window">
+        <field name="type">ir.actions.act_window</field>
+        <field name="name">Trx</field>
+        <field name="res_model">vit.trx</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_type">form</field>
+        <field name="domain">[]</field>
+        <field name="context">\{}</field>
+    </record>
+
+    <menuitem id="menu_vit_trx"
+        parent="sale.sale_order_menu"
+        sequence="10"
+        action="act_open_vit_trx_view" />
+    
+
+       
+       
+    </data>
+</odoo>
