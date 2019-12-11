@@ -30,6 +30,7 @@
                         <field name="name"/>
                         <field name="debit"/>
                         <field name="credit"/>  
+                        <field name="user_id"/>  
                     </group>
                 </sheet>
             </form>
@@ -53,9 +54,14 @@
         parent="sale.sale_order_menu"
         sequence="10"
         action="act_open_vit_trx_view" />
-    
-
-       
-       
     </data>
 </odoo>
+
+<!-- <record>
+        <field name="arch" type="xml">
+            <xpath expr='//form[@string="Product"]'
+                                            position='attributes'>
+                <attribute name="create">false</attribute>
+            </xpath>
+        </field>
+</record> -->

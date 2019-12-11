@@ -20,6 +20,15 @@ class trx(models.Model):
     credit = fields.Float(string="Credit",)
     balance = fields.Float(compute='_get_balance',
                              string="Balance", required=False)
+    
+    
+    
+    user_id = fields.Many2one(
+        string='Owner',
+        comodel_name='res.users',
+        default= lambda self: self.env.user.id
+    )
+    
 
     @api.depends('debit', 'credit')
     def _get_balance(self):
